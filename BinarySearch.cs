@@ -19,9 +19,9 @@ namespace BinarySearch {
             int low = 0;
             while (low <= high) {
                 int mid = (high + low) / 2;
-                if (num == arr[mid]) return mid;
+                if (arr[mid] > num) high = mid - 1;
                 else if (arr[mid] < num) low = mid + 1;
-                else if (arr[mid] > num) high = mid - 1;
+                else if (num == arr[mid]) return mid;
             }
             return -1;
         }
@@ -39,9 +39,9 @@ namespace BinarySearch {
             int low = 0;
             while (low <= high) {
                 int mid = (high + low) / 2;
-                if (num == arr[mid]) return mid + 1;
+                if (arr[mid] > num) high = mid - 1;
                 else if (arr[mid] < num) low = mid + 1;
-                else if (arr[mid] > num) high = mid - 1;
+                else if (num == arr[mid]) return mid + 1;
             }
 
             if (high < 0) return 0;
@@ -62,9 +62,9 @@ namespace BinarySearch {
             int low = 0;
             while (low <= high) {
                 int mid = (high + low) / 2;
-                if (num == arr[mid]) return mid - 1;
+                if (arr[mid] > num) high = mid - 1;
                 else if (arr[mid] < num) low = mid + 1;
-                else if (arr[mid] > num) high = mid - 1;
+                else if (num == arr[mid]) return mid - 1;
             }
 
             if (high < 0) return -1;
